@@ -11,6 +11,12 @@ namespace 委托
     /// 定义一个没有参数也没有返回值的委托
     /// </summary>
     public delegate void MyDelegate();
+    /// <summary>
+    /// 定义一个有参数无返回值的委托
+    /// 定义委托的返回类型要和方法返回类型一样
+    /// </summary>
+    /// <param name="name">名字</param>
+    public delegate void GreetDelegate(string name);
     class Program
     {
         static void GetInfo()
@@ -31,6 +37,18 @@ namespace 委托
             //2.
             MyDelegate md1 = GetInfo;
             md1();
-        }
+            Greet gt = new Greet();
+            GreetDelegate gdz;
+            GreetDelegate gd = gt.Chinese;
+            GreetDelegate gd1 = gt.Korea;
+            /* gdz = gd + gd1;//将委托对象gd和gd1赋给了gdz
+             //将所有的委托对象连接起来
+             gdz += gd;
+             gdz += gd1;
+             gd1("三胖");
+             gd("张三");*/
+            gt.Greeting("中国人", gd);
+        
+    }
     }
 }
