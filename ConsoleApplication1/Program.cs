@@ -41,12 +41,6 @@ namespace 委托
             GreetDelegate gdz;
             GreetDelegate gd = gt.Chinese;
             GreetDelegate gd1 = gt.Korea;
-            /* gdz = gd + gd1;//将委托对象gd和gd1赋给了gdz
-             //将所有的委托对象连接起来
-             gdz += gd;
-             gdz += gd1;
-             gd1("三胖");
-             gd("张三");*/
             gt.Greeting("中国人", gd);
         
     }
